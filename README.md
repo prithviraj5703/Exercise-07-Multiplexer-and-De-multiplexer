@@ -47,17 +47,40 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+1.Start the module using module projname().
 
+2.Declare the inputs and outputs along with the select lines according to the multiplexer and demultiplexer.
+
+3.Use wire to assign intermediate outputs.
+
+4.Use and,or and not gates to get the desired output.
+
+5.End the module.
+
+6.Generate RTL realization and timing diagrams.
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: V.Prithviraj
+RegisterNumber:212222100038  
 
+PROGRAM:
+
+module mux4(s1,s2,io,it,ir,iu,y);
+input s1,s2,io,it,ir,iu;
+output y;
+wire a,b,c,d,e,f;
+assign e=~s1;
+assign f=~s2;
+assign a=io&e&f;
+assign b=it&e&s2;
+assign c=ir&s1&f;
+assign d=iu&s1&s2;
+assign y=a|b|c|d;
+endmodule
+```
 
 
 
@@ -65,6 +88,7 @@ RegisterNumber:
 
 ### RTL LOGIC  
 
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/cfa39938-33a0-453b-93e7-3724c83c221d)
 
 
 
@@ -73,6 +97,10 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/62bc10ea-2d50-4b73-89b4-cc38334b7e25)
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/fa7a6538-da63-4d6c-aa6a-462865584852)
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/7b83d888-08c0-4cdf-9f90-de6e397f0bcc)
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/c2042961-5232-4ccd-8cf7-79c6ef0e2d21)
 
 
 
@@ -80,9 +108,37 @@ RegisterNumber:
 
 ### TRUTH TABLE 
 
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/4c99e972-ecdc-4c5a-99d0-65a90ee75987)
 
+### PROGRAM:
+```
+Program for flipflops  and verify its truth table in quartus using Verilog programming.
+Developed by:V.Prithviraj
+RegisterNumber:  21222100038
 
+PROGRAM:
+module dm(s1,s2,i1,i2,i3,i4,y);
+input s1,s2,i1,i2,i3,i4;
+output y;
+wire a,b,c,d,e,f;
+assign e=~s1;
+assign f=~s2;
+assign a=i1&e&f;
+assign b=i2&e&s2;
+assign c=i3&s1&f;
+assign d=i4&s1&s2;
+assign y=a|b|c|d;
+endmodule
+```
+### RTL LOGIC  
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/5df9afd4-ca13-4ea1-b177-d837acde6cbb)
 
+### TIMING DIGRAMS 
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/073d1c2b-9171-4e10-bf7d-1e97619aea75)
+
+### TRUTH TABLE:
+![image](https://github.com/prithviraj5703/Exercise-07-Multiplexer-and-De-multiplexer/assets/121418418/74a1a6ca-ec25-4ee6-ab99-06ad955f6724)
 
 
 ### RESULTS 
+Thus the program to design a 4x1 multiplexer and 1x4 demultiplexer is done successful.
